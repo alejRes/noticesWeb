@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
 import Nav from '../Nav';
 import './Header.css';
+import {userContext} from '../../context/userContext'
 
 class Head extends Component {
-  // constructor(props){
-    // super(props);
-    // this.state = {};
-  // }
+
+  static contextType = userContext;
+
+  constructor(props){
+    super(props);
+    this.state = {
+      user:{
+        userName:""
+      }
+    };
+  }
 
   // componentWillMount(){}
   // componentDidMount(){}
+
   // componentWillUnmount(){}
 
   // componentWillReceiveProps(){}
@@ -21,6 +30,13 @@ class Head extends Component {
     return (
       <div>
         <Nav/>
+        <userContext.Consumer>
+          {({user})=>
+            user.userName?
+              <h3>Bienvenido {user.userName}</h3>:
+              <></>
+          }
+        </userContext.Consumer>
       </div>
     );
   }

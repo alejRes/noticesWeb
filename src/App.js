@@ -11,12 +11,18 @@ export class App extends Component {
     super(props)
     this.state = {
       user: {
-        nameUser: ""
+        userName: ""
       }
     }
   }
+  readUser=(userName)=>{
+    this.setState({user:{userName}})
+  }
   render() {
-    const value ={}
+    const value ={
+      user:this.state.user,
+      readUser: this.readUser
+    }
     return(
     <div className="App">
       <BrowserRouter>
