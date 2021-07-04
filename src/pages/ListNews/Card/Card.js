@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import './Card.css';
 
 class Card extends Component {
-  // constructor(props){
-    // super(props);
-    // this.state = {};
-  // }
+  constructor(props){
+    super(props);
+    this.state = {};
+  }
 
   // componentWillMount(){}
   // componentDidMount(){}
@@ -18,7 +18,9 @@ class Card extends Component {
 
   render() {
     return (
-      <div>Tarjeta de la noticia</div>
+      <div>
+        <p>{this.props.data.title}</p> 
+      </div>
     );
   }
 }

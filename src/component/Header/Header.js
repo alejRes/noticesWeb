@@ -7,14 +7,14 @@ class Head extends Component {
 
   static contextType = userContext;
 
-  constructor(props){
-    super(props);
-    this.state = {
-      user:{
-        userName:""
-      }
-    };
-  }
+  // constructor(props){
+  //   super(props);
+  //   this.state = {
+  //     user:{
+  //       userName:""
+  //     }
+  //   };
+  // }
 
   // componentWillMount(){}
   // componentDidMount(){}
