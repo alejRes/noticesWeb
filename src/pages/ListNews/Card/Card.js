@@ -18,7 +18,7 @@ class Card extends Component {
 
   render() {
     return (
-      <div></div>
+      <div>Tarjeta de la noticia</div>
     );
   }
 }

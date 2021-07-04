@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './ListNews.css';
+import Card from './Card'
 
 class ListNews extends Component {
   // constructor(props){
@@ -18,7 +19,9 @@ class ListNews extends Component {
 
   render() {
     return (
-      <div></div>
+      <div>
+        <Card/>
+      </div>
     );
   }
 }

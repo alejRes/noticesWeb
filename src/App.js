@@ -1,8 +1,8 @@
 import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Header from './components/Header/Header';
-import Main from './components/Main/Main';
-import Footer from './components/Footer/Footer';
+import { BrowserRouter} from 'react-router-dom';
+import Header from './component/Header';
+import Main from './component/Main';
+import Footer from './component/Footer';
 import React, { Component } from 'react';
 import { userContext } from './context/userContext'
 
@@ -15,7 +15,9 @@ export class App extends Component {
       }
     }
   }
-  return() {
+  render() {
+    const value ={}
+    return(
     <div className="App">
       <BrowserRouter>
         <userContext.Provider value={value}>
@@ -25,6 +27,7 @@ export class App extends Component {
       </BrowserRouter>
       <Footer />
     </div>
+    )
   };
 }
 

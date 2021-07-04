@@ -18,7 +18,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div></div>
+      <div>Esta es la home</div>
     );
   }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './Head.css';
+import Nav from '../Nav';
+import './Header.css';
 
 class Head extends Component {
   // constructor(props){
@@ -18,7 +19,9 @@ class Head extends Component {
 
   render() {
     return (
-      <div></div>
+      <div>
+        <Nav/>
+      </div>
     );
   }
 }
