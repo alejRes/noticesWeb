@@ -32,15 +32,23 @@ class ListNews extends Component {
       for (let i = 0; i < 5; i++) {
         let pos = Math.floor(Math.random() * 20);
         console.log('aleatoria',this.state.news)
-        aletNews.push(this.state.news[pos])
+        aletNews.push({...this.state.news[pos],id:i})
         console.log('array ale',aletNews)
       }
       this.setState({publish:[...this.state.publish,...aletNews]})
       console.log(`newPublish`, this.state.publish)
     }
   }
+  deleteNews = (i) =>{
+    let filternews=this.state.publish.filter(item => {
+      console.log(i)
+      console.log(`item.id`, item.id)
+      return i !== item.id
+    })
+    this.setState({publish:filternews})
+  }
   /* funcion que se utiliza para pintar todas las tarjetas de noticias */
-  paintNews = () => this.state.publish.map((notice, i) => <Card data={notice} key={i} />)
+  paintNews = () => this.state.publish.map((notice, i) => <Card data={notice} key={i} remove={()=>this.deleteNews(notice.id)}/>)
   /* console.log(`newPublish`, this.state.newsPublish) */
     // this.state.newsPublish.forEach((notice)=><Card/>)
 

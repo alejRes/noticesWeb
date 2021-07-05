@@ -1,28 +1,51 @@
 import React, { Component } from 'react';
-import './Card.css';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+// import './Card.css';
 
-class Card extends Component {
-  constructor(props){
-    super(props);
-    this.state = {};
-  }
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 140,
+  },
+});
 
-  // componentWillMount(){}
-  // componentDidMount(){}
-  // componentWillUnmount(){}
+export default function MediaCard(props) {
+  const classes = useStyles();
 
-  // componentWillReceiveProps(){}
-  // shouldComponentUpdate(){}
-  // componentWillUpdate(){}
-  // componentDidUpdate(){}
-
-  render() {
-    return (
-      <div>
-        <p>{this.props.data.title}</p> 
-      </div>
-    );
-  }
+  return (
+    <Card className={classes.root}>
+      <CardActionArea>
+        <CardMedia
+          className={classes.media}
+          image={props.data.urlToImage}
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            {props.data.title}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {props.data.description}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary" onClick={props.remove}>
+          Delete
+        </Button>
+        <Button size="small" color="primary" href={props.data.url}>
+          Learn More
+        </Button>
+      </CardActions>
+    </Card>
+  );
 }
-
-export default Card;

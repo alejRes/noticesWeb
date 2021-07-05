@@ -5,3 +5,14 @@
 .Card {
     /* propertys here */
 }
+.bodyClass {
+    background-color: #fff;
+    padding: 10px;
+}
+  
+.menuClass {
+    padding: 20px;
+    background-color: #999;
+    
+    
+}
