@@ -1,0 +1,10 @@
+@import "../../Sass/mixins";
+
+.Home {
+    @include flex-column-center();
+    >*{
+        margin:16px;
+        width: 250px;
+        height: 24px;
+    }
+}

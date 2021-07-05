@@ -1,0 +1,30 @@
+@import "../../Sass/mixins";
+.Form {
+    @include flex-column-center();
+    background-color: #020825;
+    color: white;
+    >label{
+        margin: 12px;
+        font-weight: bold;
+        
+    }
+    >input,textarea,button{
+        width: 256px;
+        height: 24px;
+        border:none;
+        border-radius: 10px;
+        box-shadow: 4px 4px 24px black, -2px -1px 20px whitesmoke;
+
+    }
+    >textarea{
+        height: 250px;
+    }
+    >button{
+        background-color: whitesmoke;
+        font-weight: bold;
+        color:#020825;
+        margin: 16px 0px;
+        width: 150px;
+        height: 24px;
+    }
+}

@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-// import './Card.css';
+import './Card.scss';
 
 const useStyles = makeStyles({
   root: {
@@ -20,9 +20,8 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
   const classes = useStyles();
-
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} className="Card">
       <CardActionArea>
         <CardMedia
           className={classes.media}

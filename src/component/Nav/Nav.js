@@ -79,6 +79,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/Inbox';
 import HomeIcon from '@material-ui/icons/Home';
 import PageIcon from '@material-ui/icons/Pages';
+import './Nav.scss'
 
 const useStyles = makeStyles({
   list: {
@@ -112,22 +113,22 @@ export default function Nav() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-        <ListItem>
+      <List className="Nav">
+        <ListItem className="LinkItem">
           <ListItemIcon><HomeIcon /></ListItemIcon>
-          <Link to='home'>
+          <Link to='/' className="Link">
             <ListItemText primary='Home' />
           </Link>
         </ListItem>
-         <ListItem>
+         <ListItem ListItem className="LinkItem">
           <ListItemIcon><InboxIcon/></ListItemIcon>
-          <Link to='Form'>
+          <Link to='/Form' className="Link">
             <ListItemText primary='Formulario' />
           </Link>
         </ListItem>
-        <ListItem>
+        <ListItem ListItem className="LinkItem">
           <ListItemIcon><PageIcon/></ListItemIcon>
-          <Link to='list'>
+          <Link to='/list'className="Link">
             <ListItemText primary='News' />
           </Link>
         </ListItem> 

@@ -6,18 +6,20 @@ import ListNews from '../../pages/ListNews'
 import './Main.css';
 
 class Main extends Component {
-  // constructor(props){
-  // super(props);
-  // this.state = {};
-  // }
-
+  constructor(props){
+  super(props);
+  this.state = {};
+  }
+  readNews =(notice)=>{
+    this.setState({news:notice})
+  }
   render() {
     return (
       <div>
         <Switch>
-          <Route path="/home" component={Home} exact />
-          <Route path="/form" component={Form} />
-          <Route path="/list" component={ListNews} />
+          <Route path="/" component={Home} exact />
+          <Route path="/form" component={()=><Form readNews={this.readNews}/>} />
+          <Route path="/list" component={()=><ListNews data={this.state.news}/>} />
         </Switch>
       </div>
     );

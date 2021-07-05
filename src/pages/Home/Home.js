@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Home.css';
+import './Home.scss';
 import {userContext} from '../../context/userContext'
 
 class Home extends Component {
@@ -33,7 +33,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Home">
         <input type="text" placeholder='Introduce tu nombre' onChange={this.changeName}/>
         <button onClick={this.captureName}>Enviar</button>
       </div>
